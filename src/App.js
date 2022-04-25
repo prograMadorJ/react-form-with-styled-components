@@ -11,7 +11,7 @@ import {
   FormHeaderContainer,
   ControlsContainer,
   FieldContainer,
-  MessageErrorContainer,
+  ErrorMessageContainer,
   ButtonFloatContainer,
 } from './style';
 
@@ -54,10 +54,10 @@ const App = () => {
     setTimeout(() => setFocus('name'), 1);
   };
 
-  const MessageError = ({ name }) => (
-    <MessageErrorContainer>
+  const ErrorMessage = ({ name }) => (
+    <ErrorMessageContainer>
       <div>{errors && errors[name]?.message}</div>
-    </MessageErrorContainer>
+    </ErrorMessageContainer>
   );
 
   const FormHeader = ({ children }) => (
@@ -81,7 +81,7 @@ const App = () => {
             {...register('name')}
             isError={getFieldState('name').invalid}
           />
-          <MessageError name="name" />
+          <ErrorMessage name="name" />
         </FieldContainer>
 
         <FieldContainer>
@@ -92,7 +92,7 @@ const App = () => {
             {...register('age')}
             isError={getFieldState('age').invalid}
           />
-          <MessageError name="age" />
+          <ErrorMessage name="age" />
         </FieldContainer>
 
         <FieldContainer>
@@ -103,7 +103,7 @@ const App = () => {
             {...register('email')}
             isError={getFieldState('email').invalid}
           />
-          <MessageError name="email" />
+          <ErrorMessage name="email" />
         </FieldContainer>
 
         <ButtonFloatContainer>

@@ -94,7 +94,7 @@ export const ControlsContainer = styled.div`
   ${borderSolid}
 `;
 
-export const MessageErrorContainer = styled.div`
+export const ErrorMessageContainer = styled.div`
   & > div {
     margin-top: 3px;
     margin-left: 18px;
